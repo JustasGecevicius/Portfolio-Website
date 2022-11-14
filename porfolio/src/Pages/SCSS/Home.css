@@ -1,0 +1,65 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+.homewindow1 {
+  position: relative;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #010000;
+}
+.homewindow1 .arrow {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(-90deg);
+  height: 50px;
+  width: 50px;
+}
+.homewindow1 .parallaxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+}
+.homewindow1 .parallaxChild {
+  z-index: -5;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homewindow1 img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homewindow1 .mainTextDiv {
+  text-align: center;
+  position: absolute;
+  z-index: 20;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.homewindow1 .mainTextDiv h1 {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+}
+.homewindow1 .mainTextDiv h3 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 100;
+}
