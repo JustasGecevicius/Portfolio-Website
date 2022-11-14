@@ -11,13 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   // outline: solid red;
+    overflow-y: hidden;
     background-color: #010000;
     .arrow{
         top: 100%;
         left: 50%;
         transform: translate(-50%, -100%) rotate(-90deg);
-
         height: 50px;
         width: 50px;
     }
@@ -61,6 +60,15 @@
             font-size: 2rem;
             text-align: center;
             font-weight: 100;
+        }
+    }
+}
+
+@media (max-width : 500px)
+{
+    .homewindow1{
+        img{
+            width: 100vh;
         }
     }
 }

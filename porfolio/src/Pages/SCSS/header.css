@@ -52,6 +52,8 @@ html, body {
 }
 
 .header a {
+  text-decoration: none;
+  cursor: pointer;
   color: #eee;
 }
 
@@ -63,10 +65,6 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-}
-.info a {
-  text-decoration: none;
-  cursor: pointer;
 }
 .info .navigationWrapper {
   display: flex;

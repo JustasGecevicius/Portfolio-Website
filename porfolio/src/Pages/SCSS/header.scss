@@ -47,7 +47,10 @@ html,body{
   z-index:-2
 }
 .header a{
-  color:#eee
+  text-decoration:none;
+  cursor: pointer;
+  color:#eee;
+
 }
 
 .info{
@@ -58,10 +61,7 @@ html,body{
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  a{
-    text-decoration:none;
-    cursor: pointer;
-  }
+
   .navigationWrapper{
     display: flex;
     flex-direction: row;
@@ -76,10 +76,12 @@ html,body{
   0% { transform: translateY(0px)}
   50% { transform: translateY(-200px)}
 }
+
 .content{  
   padding:5% 10%;
   text-align:justify
 }
+
 .btn{
   color:#333;
   border:2px solid;

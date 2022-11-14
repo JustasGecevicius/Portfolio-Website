@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
   background-color: #010000;
 }
 .homewindow1 .arrow {
@@ -62,4 +63,10 @@
   font-size: 2rem;
   text-align: center;
   font-weight: 100;
+}
+
+@media (max-width: 500px) {
+  .homewindow1 img {
+    width: 100vh;
+  }
 }

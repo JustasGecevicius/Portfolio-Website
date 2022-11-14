@@ -6,15 +6,14 @@ export const Header = () => {
     <div className="header">
       <div className="sides">{/* <a href= "#" class="logo" >BLOG</a> */}</div>
       <div className="info">
-        <a href="#category">
-          <h1>JG</h1>
-        </a>
+        <Link to="/">
+          <a href="">
+            <h1>JG</h1>
+          </a>
+        </Link>
         <div className="navigationWrapper">
           <Link to="/">
             <h3 className="navigationTitle">Home</h3>
-          </Link>
-          <Link to="/About">
-            <h3 className="navigationTitle">About Me</h3>
           </Link>
           <Link to="/Projects">
             <h3 className="navigationTitle">Project</h3>
