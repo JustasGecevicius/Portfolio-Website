@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { ProjectsObject } from "../../Components/ProjectsObject";
 import "../SCSS/About.css";
 
+
 export const About = () => {
+
+ProjectsObject();
+
   return (
     <div className="about">
       <div className="textWrapperAbout">

@@ -1,3 +1,134 @@
+*,
+*::after,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .projects {
-  height: calc(100vh - 100px);
+  background-color: black;
+  text-align: center;
+  min-height: calc(100vh - 100px - 30px);
+  padding: 2rem;
+}
+.projects .pageTitle {
+  color: white;
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+.projects .projectsDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.projectCard {
+  box-shadow: 0px 0px 10px 5px green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  transition: 300ms;
+  max-width: 250px;
+}
+.projectCard:hover {
+  transform: scale(1.1);
+}
+.projectCard .projectImageDiv {
+  max-width: 250px;
+  height: 250px;
+}
+.projectCard .projectImageDiv .projectImage {
+  max-width: 250px;
+  position: absolute;
+  transform: scale(0);
+}
+.projectCard .projectImageDiv .projectImageMain {
+  max-width: 250px;
+  height: 250px;
+}
+.projectCard .projectTextWrap {
+  width: 100%;
+}
+.projectCard .projectTextWrap .projectAdditionalTextWrap {
+  transform: scale(0);
+  position: absolute;
+}
+.projectCard .projectTextWrap .projectTitle {
+  padding: 0.1rem;
+  width: 100%;
+}
+
+.projectModal {
+  background-color: white;
+}
+.projectModal .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+.projectModal .modal {
+  box-shadow: 0px 0px 20px 10px green;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  max-width: 700px;
+}
+.projectModal .modal .modalImageDiv {
+  display: flex;
+  flex-direction: column;
+  max-height: 40vh;
+  min-width: 50%;
+  overflow-y: auto;
+}
+.projectModal .modal .modalTextWrap {
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.projectModal .modal .modalTextWrap .modalTitleWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.projectModal .modal .modalTextWrap .modalTitleWrap .modalTitle {
+  margin: 0;
+  padding: 0;
+}
+.projectModal .modal .modalTextWrap .modalAdditionalTextWrap {
+  margin-bottom: 1rem;
+}
+.projectModal .modal .modalTextWrap .modalAdditionalTextWrap .modalDescription {
+  margin-bottom: 1rem;
+}
+.projectModal .modal .modalTextWrap .modalAdditionalTextWrap .modalTechnologiesTitle {
+  margin-bottom: 1rem;
+}
+.projectModal .modal .modalTextWrap .modalAdditionalTextWrap ul {
+  list-style-type: none;
+}
+.projectModal .modal .modalTextWrap .modalButtons {
+  display: flex;
+  justify-content: center;
+}
+.projectModal .modal .modalTextWrap .modalButtons a {
+  text-decoration: none;
 }
