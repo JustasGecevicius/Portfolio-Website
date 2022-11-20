@@ -24,23 +24,26 @@ export const ProjectCard = ({ title, images }) => {
   //   setData(projectData);
   // },[]);
 
-  
-
   // useEffect(() => {
   //   console.log("data", data);
   //   setDisplay(true);
   // }, [data]);
-  
-  console.log("Objektas", images,".keys", Object.keys(images));
+
   return active ? (
     <ProjectModal title={title} setActive={setActive} />
   ) : (
     <div className="projectCard" onClick={openProjectDiv}>
       <div className="projectImageDiv">
         {Object.values(images).map((elem, index) => {
-          return <div key={index}></div>
-        })
-        }
+          return (
+            <img
+              className="projectImageMain"
+              key={index}
+              src={elem}
+              alt={elem}
+            ></img>
+          );
+        })}
       </div>
       <div className="projectTextWrap">
         {display ? (
