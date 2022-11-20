@@ -1,59 +1,72 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectModal } from "./ProjectModal";
-import { ProjectsObject } from "./ProjectsObject";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
-export const ProjectCard = ({ title }) => {
+export const ProjectCard = ({ title, images }) => {
   const [active, setActive] = useState(false);
+
+  const [display, setDisplay] = useState(false);
+  const [data, setData] = useState();
 
   const openProjectDiv = (e) => {
     active ? setActive(false) : setActive(true);
   };
 
-  let Images = ProjectsObject();
-  console.log(Images);
+  // const firestore = getFirestore();
 
+  // const newImages = {...images};
+  // useEffect (() => {
+  //   const projectRef = doc(firestore, "ProjectDescriptions", title);
+  //   const projectSnap = getDoc(projectRef);
+  //   //console.log("projectSnap", projectSnap.data());
+  //   const projectData = projectSnap.data();
+  //   console.log(projectData);
+  //   setData(projectData);
+  // },[]);
+
+  
+
+  // useEffect(() => {
+  //   console.log("data", data);
+  //   setDisplay(true);
+  // }, [data]);
+  
+  console.log("Objektas", images,".keys", Object.keys(images));
   return active ? (
-    <ProjectModal title={title} setActive={setActive}/>
+    <ProjectModal title={title} setActive={setActive} />
   ) : (
     <div className="projectCard" onClick={openProjectDiv}>
       <div className="projectImageDiv">
-        {Object.keys(Images[title]["pictures"]).map((elem, index) => {
-          return index === 0 ? (
-            <img
-              key={index}
-              className="projectImageMain"
-              src={Images[title]["pictures"][elem]}
-              alt="ProjectImage"
-            />
-          ) : (
-            <img
-              key={index}
-              className="projectImage"
-              src={Images[title]["pictures"][elem]}
-              alt="ProjectImage"
-            />
-          );
-        })}
+        {Object.values(images).map((elem, index) => {
+          return <div key={index}></div>
+        })
+        }
       </div>
       <div className="projectTextWrap">
-        <h3 className="projectTitle">{Images[title]["name"]}</h3>
-        <div className="projectAdditionalTextWrap">
-          <p className="projectDescription">
-            {Images[title]["description"]["p"]}
-          </p>
-          <ul className="technologiesUl">
-            Technologies Used: <br />
-            {Object.keys(Images[title]["description"]["technologies"]).map(
-              (elem, index) => {
-                return (
-                  <li key={index} className="technologiesLi">
-                    {Images[title]["description"]["technologies"][elem]}
-                  </li>
-                );
-              }
-            )}
-          </ul>
-        </div>
+        {display ? (
+          <div>
+            {/* <h3 className="projectTitle">{Images[title]["name"]}</h3>
+            <div className="projectAdditionalTextWrap">
+              <p className="projectDescription">
+                {Images[title]["description"]["p"]}
+              </p>
+              <ul className="technologiesUl">
+                Technologies Used: <br />
+                {Object.keys(Images[title]["description"]["technologies"]).map(
+                  (elem, index) => {
+                    return (
+                      <li key={index} className="technologiesLi">
+                        {Images[title]["description"]["technologies"][elem]}
+                      </li>
+                    );
+                  }
+                )}
+              </ul>
+            </div> */}
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

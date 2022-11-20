@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
 import { ProjectsObject } from "../../Components/ProjectsObject";
 import "../SCSS/About.css";
-
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 export const About = () => {
+  const downloadPDF = async () => {
+    try {
+      const storage = await getStorage();
+      const url = await getDownloadURL(ref(storage, "Management CV.pdf"));
+      let alink = document.createElement("a");
+      console.log(url);
+      alink.href = url;
+      alink.target = "_b";
+      alink.click();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-ProjectsObject();
+  ProjectsObject();
 
   return (
     <div className="about">
@@ -20,9 +33,15 @@ ProjectsObject();
           and for all my latest projects click Projects.
         </p>
         <div className="aboutButtonsDiv">
-        <button type="button" className="resume">Resume</button>
-        <Link to="/projects"><button type="button" className="Projects">Projects</button></Link>
-      </div>
+          <button type="button" className="resume" onClick={downloadPDF}>
+            Resume
+          </button>
+          <Link to="/projects">
+            <button type="button" className="Projects">
+              Projects
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

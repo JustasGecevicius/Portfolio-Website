@@ -2,7 +2,7 @@ export const ProjectsObject = () => {
 
   let projectsObject = {
     AdminDash: {
-        name:"Admin Dashboard",
+      name:"Admin Dashboard",
       pictures: {
         "AdminDash.png": "/static/media/AdminDash.0073557163b057c2ab3c.png",
         "AdminDash2.png": "/static/media/AdminDash2.51add96c529900daeedd.png",
@@ -16,7 +16,8 @@ export const ProjectsObject = () => {
     Calc: {
         name:"Calculator",
       pictures: {
-        "Calc.png": "/static/media/Calc.dbb88982c95f96131006.png",
+        "Calc.png": "/static/media/Calc.96d9a41ea19687fd58ac.png",
+        
       },
       description: {
         p: "This Project was focused on implementing the functionality of Javascript into my projects, anticipate edge cases and unexpected user inputs",

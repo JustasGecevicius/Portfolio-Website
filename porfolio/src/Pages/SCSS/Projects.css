@@ -132,3 +132,11 @@
 .projectModal .modal .modalTextWrap .modalButtons a {
   text-decoration: none;
 }
+
+.Yes {
+  background-color: red;
+}
+
+.No {
+  background-color: green;
+}
