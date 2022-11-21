@@ -1,5 +1,4 @@
 export const ProjectModal = ({ title, setActive, images, text }) => {
-
   return (
     <div className="projectModal">
       <div className="overlay"></div>
@@ -29,19 +28,19 @@ export const ProjectModal = ({ title, setActive, images, text }) => {
             </p>
           </div>
           <div className="modalAdditionalTextWrap">
-            <p className="modalDescription">
-              {text["p"]}
-            </p>
+            <p className="modalDescription">{text["p"]}</p>
             <h4 className="modalTechnologiesTitle">Technologies Used</h4>
             <ul className="modalTechnologiesUl">
               {text["tech"].map((elem, index) => {
-                return <li key={index}>{elem}</li>
-              })}             
+                return <li key={index}>{elem}</li>;
+              })}
             </ul>
           </div>
           <div className="modalButtons">
-        <a href={text["link"]} target="_b" className="visitButtonAnchor"><button className="visitWebsite">Visit Website</button></a>
-        </div>
+            <a href={text["link"]} target="_b" className="visitButtonAnchor">
+              <button className="visitWebsite">Visit Website</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
