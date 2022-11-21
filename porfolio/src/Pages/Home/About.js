@@ -9,7 +9,7 @@ export const About = () => {
       const storage = await getStorage();
       const url = await getDownloadURL(ref(storage, "Management CV.pdf"));
       let alink = document.createElement("a");
-      console.log(url);
+      //console.log(url);
       alink.href = url;
       alink.target = "_b";
       alink.click();
