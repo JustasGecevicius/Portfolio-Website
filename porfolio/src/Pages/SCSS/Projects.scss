@@ -57,6 +57,7 @@
         position: absolute;
       }
       .projectTitle {
+        margin-top: 5px;
         padding: 0.1rem;
         width: 100%;
       }
@@ -64,15 +65,22 @@
 }
 
 .projectModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     .overlay{
         position: fixed;
+        width: 100vw;
+        height: 100vh;
         top: 0;
         left:0;
         right: 0;
         bottom: 0;
+        transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.7);
-        z-index: 0;
+        z-index: 10;
     }
     .modal{
         box-shadow: 0px 0px 20px 10px green;
@@ -85,8 +93,10 @@
         flex-direction:row;
         width: 80vw;
         max-width: 700px;
+        max-height: 320px;
 
         .modalImageDiv{
+          background-color: white;
             display: flex;
             flex-direction: column;
             max-height: 40vh;
@@ -98,7 +108,7 @@
             background-color: white;
             display: flex;
             flex-direction: column;
-            
+            overflow-y: auto;
             .modalTitleWrap{
                 display: flex;
                 flex-direction: row;
@@ -133,9 +143,34 @@
     }
 }
 
-.Yes{
-  background-color: red;
+.loadingScreen{
+  background-color:black;
+  height:calc(100vh - 100px - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.No{
-  background-color: green;
+
+@media screen and (min-width : 700px) {
+  .projectCard{
+    flex-basis: 500px;
+  }
+  .projectsDiv{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width : 500px) {
+  .modal{
+    max-height: 600px !important;
+    flex-direction: column !important;
+  }
+  .modalImageDiv{
+    flex-basis: 50%;
+    min-height: 300px;
+  }
+  .modalTextWrap{
+    flex-basis: 50%;
+  }
 }

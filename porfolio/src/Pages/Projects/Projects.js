@@ -23,8 +23,6 @@ export const Projects = () => {
     "Todo"
   ];
 
-  const [fetched, setFetched] = useState({});
-
   const [imagesObject, setimagesObject] = useState({});
   const [textObject, setTextObject] = useState({});
 
@@ -43,7 +41,7 @@ export const Projects = () => {
 
     const bybydejau = await Promise.all(allImages);
 
-    //console.log(bybydejau);
+    //// console.log(bybydejau);
 
     const newBybyDejau = bybydejau.reduce(
       (acc, curr, index) => ({ ...acc, [ProjectsArray[index]]: curr }),
@@ -67,21 +65,19 @@ useEffect (() => {
     fetchText();  
 },[]);
 
-useEffect (() => {console.log(textObject)},[textObject]);
-
 
   return (
     <div className="projects">
       <h2 className="pageTitle"> Projects </h2>
       <div className="projectsDiv">
         {imagesObject["Ecommerce"] && textObject["Ecommerce"] ? (<ProjectCard title="Ecommerce" images = {imagesObject["Ecommerce"]} text = {textObject["Ecommerce"]}/>) : (<div></div>)}
-        {imagesObject["Calc"] ? (<ProjectCard title="Calc" images = {imagesObject["Calc"]} text = {textObject["Calc"]} />) : (<div></div>)}
-        {imagesObject["AdminDash"] ? (<ProjectCard title="AdminDash" images = {imagesObject["AdminDash"]} text = {textObject["AdminDash"]} />) : (<div></div>)}
-        {imagesObject["Etch"] ? (<ProjectCard title="Etch" images = {imagesObject["Etch"]} text = {textObject["Etch"]} />) : (<div></div>)}
-        {imagesObject["MemoryGame"] ? (<ProjectCard title="MemoryGame" images = {imagesObject["MemoryGame"]} text = {textObject["MemoryGame"]} />) : (<div></div>)}
-        {imagesObject["Restaurant"] ? (<ProjectCard title="Restaurant" images = {imagesObject["Restaurant"]} text = {textObject["Restaurant"]} />) : (<div></div>)}
-        {imagesObject["TTT"] ? (<ProjectCard title="TTT" images = {imagesObject["TTT"]} text = {textObject["TTT"]} />) : (<div></div>)}
-        {imagesObject["Todo"] ? (<ProjectCard title="Todo" images = {imagesObject["Todo"]} text = {textObject["Todo"]} />) : (<div></div>)}                 
+        {imagesObject["Calc"] && textObject["Calc"] ? (<ProjectCard title="Calc" images = {imagesObject["Calc"]} text = {textObject["Calc"]} />) : (<div></div>)}
+        {imagesObject["AdminDash"] && textObject["AdminDash"] ? (<ProjectCard title="AdminDash" images = {imagesObject["AdminDash"]} text = {textObject["AdminDash"]} />) : (<div></div>)}
+        {imagesObject["Etch"] && textObject["Etch"] ? (<ProjectCard title="Etch" images = {imagesObject["Etch"]} text = {textObject["Etch"]} />) : (<div></div>)}
+        {imagesObject["MemoryGame"] && textObject["MemoryGame"] ? (<ProjectCard title="MemoryGame" images = {imagesObject["MemoryGame"]} text = {textObject["MemoryGame"]} />) : (<div></div>)}
+        {imagesObject["Restaurant"] && textObject["Restaurant"] ? (<ProjectCard title="Restaurant" images = {imagesObject["Restaurant"]} text = {textObject["Restaurant"]} />) : (<div></div>)}
+        {imagesObject["TTT"] && textObject["TTT"] ? (<ProjectCard title="TTT" images = {imagesObject["TTT"]} text = {textObject["TTT"]} />) : (<div></div>)}
+        {imagesObject["Todo"] && textObject["Todo"] ? (<ProjectCard title="Todo" images = {imagesObject["Todo"]} text = {textObject["Todo"]} />) : (<div></div>)}                 
       </div>
     </div>
   );

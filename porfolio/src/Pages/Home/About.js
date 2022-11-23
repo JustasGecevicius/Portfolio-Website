@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { ProjectsObject } from "../../Components/ProjectsObject";
 import "../SCSS/About.css";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
+import { useEffect, useState } from "react";
+import arrow from "../Images/arrow.png";
 
 export const About = () => {
+
   const downloadPDF = async () => {
     try {
       const storage = await getStorage();
@@ -18,7 +21,6 @@ export const About = () => {
     }
   };
 
-  ProjectsObject();
 
   return (
     <div className="about">
