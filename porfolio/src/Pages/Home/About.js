@@ -34,7 +34,7 @@ export const About = () => {
           <button type="button" className="resume" onClick={downloadPDF}>
             Resume
           </button>
-          <Link to="/projects">
+          <Link to="/Portfolio-Website/projects">
             <button type="button" className="Projects">
               Projects
             </button>

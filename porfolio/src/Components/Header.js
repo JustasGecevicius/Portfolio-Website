@@ -10,10 +10,10 @@ export const Header = () => {
           <h1>JG</h1>
         </Link>
         <div className="navigationWrapper">
-          <Link to="/">
+          <Link to="/Portfolio-Website">
             <h3 className="navigationTitle">Home</h3>
           </Link>
-          <Link to="/Projects">
+          <Link to="/Portfolio-Website/Projects">
             <h3 className="navigationTitle">Projects</h3>
           </Link>
         </div>
