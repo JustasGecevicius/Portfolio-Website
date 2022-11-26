@@ -40,9 +40,7 @@ export const Projects = () => {
     });
 
     const bybydejau = await Promise.all(allImages);
-
-    //// console.log(bybydejau);
-
+    
     const newBybyDejau = bybydejau.reduce(
       (acc, curr, index) => ({ ...acc, [ProjectsArray[index]]: curr }),
       {}

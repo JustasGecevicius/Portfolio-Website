@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import { ProjectsObject } from "../../Components/ProjectsObject";
 import "../SCSS/About.css";
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
-import { useEffect, useState } from "react";
-import arrow from "../Images/arrow.png";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 export const About = () => {
 
@@ -27,10 +24,9 @@ export const About = () => {
       <div className="textWrapperAbout">
         <h2>About Me</h2>
         <p>
-          I am a Dedicated and Inquisitive Front-end Developer. Over the past
-          year of learning Web Development I have made great progress. With the
+          I am a Dedicated and Inquisitive Front-end Developer. With the
           expert guidance of several Software and Front-end Development
-          professionals I have managed to understand the market standards for
+          professionals I have managed to progress significantly and understand the market standards for
           writing clean and professional code. For all of my skills click Resume
           and for all my latest projects click Projects.
         </p>
