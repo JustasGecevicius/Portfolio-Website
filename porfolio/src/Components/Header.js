@@ -6,7 +6,7 @@ export const Header = () => {
     <div className="header">
       <div className="sides">{/* <a href= "#" class="logo" >BLOG</a> */}</div>
       <div className="info">
-        <Link to="/">
+        <Link to="/Portfolio-Website">
           <h1>JG</h1>
         </Link>
         <div className="navigationWrapper">
