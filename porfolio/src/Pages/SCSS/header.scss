@@ -41,7 +41,7 @@ html,body{
   background:#1B2030 url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit) 50% 0 no-repeat;
   background-size:100%;
   background-attachment:fixed;
-  animation: grow 100s  linear 10ms infinite;
+  animation: grow 80s  linear 10ms infinite;
   transition:all 0.4s ease-in-out;
   z-index:-2
 }
@@ -94,3 +94,9 @@ html,body{
 .twtr{
   margin-top:100px
 }.btn.twtr:after{content:"\1F426";padding-left:5px}
+
+@media screen and (max-width : 500px) {
+    .header::before{
+      background-size: 150%;
+    }
+} 

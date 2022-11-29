@@ -2,7 +2,7 @@ import { Home } from "../Pages/Home/Home";
 import { Projects } from "../Pages/Projects/Projects";
 
 import { AnimatePresence } from "framer-motion";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();

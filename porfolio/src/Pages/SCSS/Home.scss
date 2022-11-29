@@ -2,7 +2,7 @@
 *, *::before, *::after{
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
 
 .homewindow1{
@@ -64,11 +64,24 @@
     }
 }
 
+
 @media (max-width : 500px)
 {
     .homewindow1{
         img{
             width: 100vh;
+        }
+    }
+    .mainTextDiv{
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        width: 100vw;
+        h1{
+            font-size: 3rem !important; 
+        }
+        h3{
+            font-size: 1.5rem !important;
         }
     }
 }

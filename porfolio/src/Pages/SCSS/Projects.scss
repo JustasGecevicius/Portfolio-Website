@@ -98,11 +98,12 @@
         position: absolute;
         right: 20px;
         top: 10px;
-        background-color: white;
+        background-color: black;
+        color: rgb(0, 255, 0);
+        font-weight:700 ;
         border-radius: 5px;
-        width: 20px;
-        height: 20px;
-
+        width: 25px;
+        height: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -114,6 +115,9 @@
             max-height: 40vh;
             min-width: 50%;
             overflow-y: auto;
+            .modalImage{
+              margin-bottom: 2rem;
+            }
         }
         .modalTextWrap{
             padding:1rem ;
