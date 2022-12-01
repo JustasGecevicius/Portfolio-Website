@@ -9,7 +9,7 @@ import { getFirebaseConfig } from "./firebase-config";
 function App() {
 
   const config = getFirebaseConfig();
-  const app = initializeApp(config);
+  initializeApp(config);
 
 
   return (

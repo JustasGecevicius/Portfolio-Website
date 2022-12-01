@@ -38,18 +38,9 @@ useEffect (() => {
 
 
   return <div className="Home">
-    <ParallaxProvider>
-      {loaded ? (<>
+    <ParallaxProvider>      
       <Homewindow1 images = {backgroundImages}/>
-      <About/>
-      </>
-      ) : (
-        <div className="loadingScreen">
-          <PropagateLoader color="rgba(57, 214, 54, 1)" className="loader"/>
-        </div>
-        
-      )}
-      
+      <About/>   
     </ParallaxProvider>
   </div>;
 };

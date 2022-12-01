@@ -1,7 +1,6 @@
 .about {
-  color: white;
   height: 100vh;
-  background-color: black;
+  background-color: white;
   display: flex;
 }
 .about .textWrapperAbout {

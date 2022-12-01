@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     overflow-y: hidden;
-    background-color: #010000;
+    background-color: white;
     .arrow{
         top: 100%;
         left: 50%;
@@ -29,21 +29,33 @@
         z-index: 30;
     }
  .parallaxChild{
+    display: flex;
+    align-items: center;
+    justify-content: center;
         z-index: -5;
         position: absolute;
         height: 100%;
         width: 100%;
         top: 0;
-        left: 0;
         object-fit: contain;
+        img{
+            height: calc(100vh - 100px);
+            width: auto;
+            transform: scale(0.6);
+        }
     }
-    img{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        object-fit: contain;
+    .parallaxText{
+        text-align: center;
+        .parallaxTextName{
+            font-size: 1.8rem;
+            h1{
+                text-align: left;
+            }
+        }
+        .parallaxTextPosition{
+            font-size: 1.5rem;
+        }
+
     }
     .mainTextDiv{
         text-align: center;
@@ -60,6 +72,34 @@
             font-size: 2rem;
             text-align: center;
             font-weight: 100;
+        }
+    }
+}
+.aboutButtonsDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+.contacts{
+    z-index: 20;
+    position: fixed;
+    background-color: black;
+    transform: translate(0%, -50%);
+    top: 50%;
+    right: 0;
+    border-radius: 10px 0 0px 10px;
+    img{
+        display: block;
+        max-width: 40px;
+        margin: 8px;
+        background-color: white;
+        border-radius:8px;
+        padding: 2px;
+        &:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: 0.2s ease-out;
         }
     }
 }

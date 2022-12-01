@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "../SCSS/About.css";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const About = () => {
-
   const downloadPDF = async () => {
     try {
       const storage = await getStorage();
@@ -18,19 +20,68 @@ export const About = () => {
     }
   };
 
+  const squareVariants = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 }, x: 0 },
+    hidden: { opacity: 1, scale: 1, x: "-100%" },
+  };
 
-  return (
-    <div className="about">
-      <div className="textWrapperAbout">
-        <h2>About Me</h2>
-        <p>
-          I am a Dedicated and Inquisitive Front-end Developer. With the
-          expert guidance of several Software and Front-end Development
-          professionals I have managed to progress significantly and understand the market standards for
-          writing clean and professional code. For all of my skills click Resume
-          and for all my latest projects click Projects.
-        </p>
-        <div className="aboutButtonsDiv">
+  function Animation() {
+    const controls = useAnimation();
+    const controls2 = useAnimation();
+    const controls3 = useAnimation();
+
+    const [ref, inView] = useInView();
+    const [ref2, inView2] = useInView();
+    const [ref3, inView3] = useInView();
+    useEffect(() => {
+      if (inView) {
+        controls.start("visible");
+      }
+    }, [controls, inView]);
+    useEffect(() => {
+      if (inView2) {
+        controls2.start("visible");
+      }
+    }, [controls2, inView2]);
+    useEffect(() => {
+      if (inView3) {
+        controls3.start("visible");
+      }
+    }, [controls3, inView3]);
+
+    return (
+      <>
+        <motion.h2
+          ref={ref2}
+          animate={controls}
+          initial="hidden"
+          variants={squareVariants}
+          className="square"
+        >
+          About Me
+        </motion.h2>
+        <motion.div
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={squareVariants}
+          className="square"
+        >
+          I am a Dedicated and Inquisitive Front-end Developer. With the expert
+          guidance of several Software and Front-end Development professionals I
+          have managed to progress significantly and understand the market
+          standards for writing clean and professional code. For all of my
+          skills click Resume and for all my latest projects click Projects.
+          Feel free to explore my Github or contact me using the buttons on the
+          right.
+        </motion.div>
+        <motion.div
+          className="aboutButtonsDiv"
+          ref={ref3}
+          animate={controls}
+          initial="hidden"
+          variants={squareVariants}
+        >
           <button type="button" className="resume" onClick={downloadPDF}>
             Resume
           </button>
@@ -39,7 +90,15 @@ export const About = () => {
               Projects
             </button>
           </Link>
-        </div>
+        </motion.div>
+      </>
+    );
+  }
+
+  return (
+    <div className="about">
+      <div className="textWrapperAbout">
+        <Animation />
       </div>
     </div>
   );
