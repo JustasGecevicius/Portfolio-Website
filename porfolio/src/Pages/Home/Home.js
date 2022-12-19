@@ -5,6 +5,7 @@ import { About } from "./About";
 import { useEffect, useState } from "react";
 import {getStorage, ref, listAll, getDownloadURL} from "firebase/storage";
 import { PropagateLoader } from "react-spinners";
+import {Contacts} from "./Contacts"
 
 export const Home = () => {
 
@@ -40,7 +41,8 @@ useEffect (() => {
   return <div className="Home">
     <ParallaxProvider>      
       <Homewindow1 images = {backgroundImages}/>
-      <About/>   
+      <About/>
+      <Contacts />   
     </ParallaxProvider>
   </div>;
 };

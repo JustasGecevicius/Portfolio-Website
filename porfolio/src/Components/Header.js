@@ -16,6 +16,9 @@ export const Header = () => {
           <Link to="/Portfolio-Website/Projects">
             <h3 className="navigationTitle">Projects</h3>
           </Link>
+          <Link to="/Portfolio-Website/Blog">
+            <h3 className="navigationTitle">Blog</h3>
+          </Link>
         </div>
       </div>
     </div>

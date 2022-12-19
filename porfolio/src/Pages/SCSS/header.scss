@@ -6,6 +6,7 @@ html,body{
 }
 
 .header{
+  font-family: "poppins";
   position:relative;
   overflow:hidden;
   display:flex;
@@ -40,7 +41,7 @@ html,body{
   background:#1B2030 url(/src/Pages/Images/pexels-justin-wolfert-9553449.jpg) 50% 0 no-repeat;
   background-size:100%;
   background-attachment:fixed;
-  animation: grow 80s  linear 10ms infinite;
+  animation: grow 20s  linear 10ms infinite;
   transition:all 0.4s ease-in-out;
   z-index:-2
 }
@@ -69,9 +70,14 @@ html,body{
     display: flex;
     flex-direction: row;
     column-gap: 2rem;
+    h3{
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
   }
   h1{
     font-size: 3rem;
+    font-weight: 500;
   }
 }
 

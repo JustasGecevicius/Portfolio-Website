@@ -1,10 +1,11 @@
-import { ProjectCard } from "../../Components/ProjectCard";
-import "../SCSS/Projects.css";
+import {ProjectCard} from "../Components/ProjectCard"
+import "./SCSS/Projects.css";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import {collection, getDocs, getFirestore} from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { getFirebaseConfig } from "../firebase-config";
+import { getFirebaseConfig } from "./firebase-config";
 import {initializeApp} from "firebase/app";
+
 
 
 const config = getFirebaseConfig();

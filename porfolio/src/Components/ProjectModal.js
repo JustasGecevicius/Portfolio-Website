@@ -1,19 +1,7 @@
 
 export const ProjectModal = ({ title, setActive, images, text }) => {
-  // function useLockBodyScroll() {
-  //   // useLaoutEffect callback return type is "() => void" type
-  //   useLayoutEffect(() => {
-  //     // Get original body overflow
-  //     const originalStyle = window.getComputedStyle(document.body).overflow;
-  //     // Prevent scrolling on mount
-  //     document.body.style.overflow = "hidden";
-  //     // Re-enable scrolling when component unmounts
-  //     return () => (document.body.style.overflow = originalStyle);
-  //   }, []); // Empty array ensures effect is only run on mount and unmount
-  // }
 
-
-
+  console.log(text);
 
   return (
     <div className="projectModal">
@@ -55,6 +43,9 @@ export const ProjectModal = ({ title, setActive, images, text }) => {
           <div className="modalButtons">
             <a href={text["link"]} target="_b" className="visitButtonAnchor">
               <button className="visitWebsite">Visit Website</button>
+            </a>
+            <a href={text["linkGithub"]} target="_b" className="visitButtonAnchor">
+              <button className="visitWebsite">Visit Repository</button>
             </a>
           </div>
         </div>

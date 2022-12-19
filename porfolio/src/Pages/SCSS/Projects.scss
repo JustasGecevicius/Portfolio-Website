@@ -6,12 +6,14 @@
   box-sizing: border-box;
 }
 .projects {
+  font-family: "Poppins";
   background-color: white;
   text-align: center;
   min-height: calc(100vh - 100px - 30px);
   padding: 2rem 0rem;
   .pageTitle {
     font-size: 3rem;
+    font-weight: 300;
     padding: 2rem 0;
   }
   .projectsDiv {
@@ -24,6 +26,31 @@
     row-gap: 2rem;
     max-width: 600px;
   }
+}
+button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background-color:rgb(30, 223, 84);
+  border: none;
+  box-shadow: 0px 5px 0px #19ca4b98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+button:hover {
+  box-shadow: 0 5px 0px -3px #14a73e98;
+  transform: translateY(5px);
+}
+button:active {
+  box-shadow: 0 3px 0px 5px #14a73e98;
 }
 
 .projectCard {
@@ -49,8 +76,8 @@
         transform: scale(0);
       }
       .projectImageMain {
-        max-width: 250px;
-        height: 250px;
+        width: 250px;
+        height: auto;
       }
   }
   .projectTextWrap{
@@ -60,6 +87,7 @@
         position: absolute;
       }
       .projectTitle {
+        font-weight: 400;        
         margin-top: 5px;
         padding: 0.1rem;
         width: 100%;
@@ -87,7 +115,9 @@
         z-index: 10;
     }
     .modal{
-        box-shadow: 0px 0px 20px 0px rgb(0, 192, 0);
+      display: flex;
+      align-items: center;
+        background-color: white;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -96,8 +126,8 @@
         display: flex;
         flex-direction:row;
         width: 80vw;
-        max-width: 700px;
-        max-height: 320px;
+        max-width: 900px;
+        height: fit-content;
       .modalExitButton{
         position: absolute;
         right: 20px;
@@ -113,19 +143,18 @@
         justify-content: center;
       }
         .modalImageDiv{
+          flex-basis: 50%;
           background-color: white;
             display: flex;
             flex-direction: column;
-            max-height: 40vh;
-            min-width: 50%;
+            height: fit-content;
+            max-height: 450px;
+            max-width: 100%;
             overflow-y: auto;
             .modalImage{
-              border-bottom: solid rgb(0, 192, 0) 5px;
-               &:only-of-type{
-                border-bottom: none;
-               }
+              margin-bottom: 2rem;
                &:last-child{
-                border-bottom: none;
+                margin-bottom: 0rem;
                }
             }
         }
@@ -135,6 +164,7 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            flex-basis: 50%;
             .modalTitleWrap{
                 display: flex;
                 flex-direction: row;
@@ -144,12 +174,16 @@
                 .modalTitle{
                     margin: 0;
                     padding: 0;
+                    font-weight: 400;
+                    font-size: 1.3rem;
+                    font-style: italic;
                 }
             }
             .modalAdditionalTextWrap{
                 margin-bottom: 1rem;
                 .modalDescription{
                     margin-bottom: 1rem;
+                    text-align: left;
                 }
                 .modalTechnologiesTitle{
                     margin-bottom: 1rem;
@@ -162,8 +196,12 @@
                 a{
                     text-decoration: none;
                 }
+                button{
+                  font-size: 0.8rem;
+                }
                 display: flex;
                 justify-content: center;
+                column-gap: 15px;
               }                   
         }
     }
@@ -187,16 +225,17 @@
   }
 }
 
-@media screen and (max-width : 500px) {
+@media screen and (max-width : 650px) {
   .modal{
     max-height: 600px !important;
     flex-direction: column !important;
   }
   .modalImageDiv{
-    flex-basis: 50%;
-    min-height: 300px;
+    flex-basis: 40% !important;
+    max-height: 350px !important;
   }
   .modalTextWrap{
-    flex-basis: 50%;
+    flex-basis: 49% !important;
+    height: 50% !important;
   }
 }

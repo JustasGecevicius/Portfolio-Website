@@ -7,9 +7,9 @@ import "../SCSS/Home.css"
 export const Contacts = () => {
   return <div className="contacts">
 
-    <img className="githubLogo" src={github} alt="github"></img>
-    <img className="gmailLogo" src={gmail} alt="gmail"></img>
-    <img className="linkedInLogo" src={linkedIn}alt="linkedIn"></img>
+    <a href="https://github.com/JustasGecevicius" target="_b"><img className="githubLogo" src={github} alt="github"/></a>
+    <a href="mailto:justas.gecevicius.22@neoma-bs.com" target="_b"><img className="gmailLogo" src={gmail} alt="gmail"/></a>
+    <a href="https://www.linkedin.com/in/justas-gecevicius-34aa94186/" target="_b"><img className="linkedInLogo" src={linkedIn} alt="linkedIn"/></a>
 
   </div>;
 };

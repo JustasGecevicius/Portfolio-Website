@@ -4,6 +4,7 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { Footer } from "../../Components/Footer";
 
 export const About = () => {
   const downloadPDF = async () => {
@@ -65,15 +66,22 @@ export const About = () => {
           animate={controls}
           initial="hidden"
           variants={squareVariants}
-          className="square"
+          className="aboutMeText"
         >
-          I am a Dedicated and Inquisitive Front-end Developer. With the expert
+          I am a <span className="italic">Dedicated and Inquisitive</span> Front-end Developer. With the expert
           guidance of several Software and Front-end Development professionals I
-          have managed to progress significantly and understand the market
-          standards for writing clean and professional code. For all of my
-          skills click Resume and for all my latest projects click Projects.
-          Feel free to explore my Github or contact me using the buttons on the
-          right.
+          have managed to progress swiftly and understand the market
+          standards for writing <span className="italic">Clean and Professional code</span>. <br /> <br />I got
+          hooked on coding from the moment I picked up an Arduino kit. The fact
+          that the code I wrote made real world changes seemed fascinating to
+          me. This is the reasson why I got drawn to Front-end development as
+          well. The changes made to the code appeared on the screen instantly
+          and provided instant feedback. This gets me <span className="italic">Inspired</span> every single time
+          to <span className="italic">Explore new Possibilities</span>.
+          <br /> <br />
+          For all of my skills click <span className="italic">Resume</span> and for all of my latest projects click
+          <span className="italic"> Projects</span>. Feel free to explore my <span className="italic">Github</span> or contact me using the
+          <span className="italic"> buttons on the right.</span>
         </motion.div>
         <motion.div
           className="aboutButtonsDiv"
@@ -96,10 +104,15 @@ export const About = () => {
   }
 
   return (
+    <>
     <div className="about">
       <div className="textWrapperAbout">
         <Animation />
-      </div>
+      </div>         
     </div>
+    <Footer/>
+    </>
+    
+
   );
 };

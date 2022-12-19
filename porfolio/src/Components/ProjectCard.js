@@ -29,6 +29,7 @@ export const ProjectCard = ({ title, images, text }) => {
         variants={squareVariants}
         className="projectCard"
         onClick={openProjectDiv}
+        whileHover={{scale:1.1}}
       >
         <div className="projectImageDiv">
           <img
@@ -61,6 +62,6 @@ export const ProjectCard = ({ title, images, text }) => {
       ref={modal}
     />
   ) : (
-    <Animation />
+    <Animation/>
   );
 };
