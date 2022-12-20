@@ -1,20 +1,17 @@
-
 export const ProjectModal = ({ title, setActive, images, text }) => {
-
-  console.log(text);
 
   return (
     <div className="projectModal">
       <div className="overlay"></div>
       <div className="modal">
-            <p
-              className="modalExitButton"
-              onClick={() => {
-                setActive(false);
-              }}
-            >
-              &#10005;
-            </p>
+        <p
+          className="modalExitButton"
+          onClick={() => {
+            setActive(false);
+          }}
+        >
+          &#10005;
+        </p>
         <div className="modalImageDiv">
           {Object.values(images).map((elem, index) => {
             return (
@@ -29,7 +26,7 @@ export const ProjectModal = ({ title, setActive, images, text }) => {
         </div>
         <div className="modalTextWrap">
           <div className="modalTitleWrap">
-            <h3 className="modalTitle">{text["name"]}</h3>            
+            <h3 className="modalTitle">{text["name"]}</h3>
           </div>
           <div className="modalAdditionalTextWrap">
             <p className="modalDescription">{text["p"]}</p>
@@ -44,7 +41,11 @@ export const ProjectModal = ({ title, setActive, images, text }) => {
             <a href={text["link"]} target="_b" className="visitButtonAnchor">
               <button className="visitWebsite">Visit Website</button>
             </a>
-            <a href={text["linkGithub"]} target="_b" className="visitButtonAnchor">
+            <a
+              href={text["linkGithub"]}
+              target="_b"
+              className="visitButtonAnchor"
+            >
               <button className="visitWebsite">Visit Repository</button>
             </a>
           </div>

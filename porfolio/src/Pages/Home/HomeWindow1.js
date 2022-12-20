@@ -36,11 +36,11 @@ export const Homewindow1 = ({ images }) => {
             src={image}
             alt="number"
             animate={{
-              scale: [0.5, 1, 1, 0.5, 0.5],
+              scale: [0, 0.8, 0.8, 0.5, 0.5],
               rotate: [0, 0, 270, 270, 0],
-              borderRadius: ["20%", "0%", "50%", "50%", "0%"],
+              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
             }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 3 }}
           ></motion.img>
         </MouseParallaxChild>
       </MouseParallaxContainer>

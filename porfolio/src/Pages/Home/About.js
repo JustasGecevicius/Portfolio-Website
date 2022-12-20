@@ -12,12 +12,12 @@ export const About = () => {
       const storage = await getStorage();
       const url = await getDownloadURL(ref(storage, "Management CV.pdf"));
       let alink = document.createElement("a");
-      //console.log(url);
+      ////console.log(url);
       alink.href = url;
       alink.target = "_b";
       alink.click();
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
@@ -68,19 +68,23 @@ export const About = () => {
           variants={squareVariants}
           className="aboutMeText"
         >
-          I am a <span className="italic">Dedicated and Inquisitive</span> Front-end Developer. With the expert
-          guidance of several Software and Front-end Development professionals I
-          have managed to progress swiftly and understand the market
-          standards for writing <span className="italic">Clean and Professional code</span>. <br /> <br />I got
-          hooked on coding from the moment I picked up an Arduino kit. The fact
-          that the code I wrote made real world changes seemed fascinating to
-          me. This is the reasson why I got drawn to Front-end development as
-          well. The changes made to the code appeared on the screen instantly
-          and provided instant feedback. This gets me <span className="italic">Inspired</span> every single time
-          to <span className="italic">Explore new Possibilities</span>.
+          I am a <span className="italic">Dedicated and Inquisitive</span>{" "}
+          Front-end Developer. With the expert guidance of several Software and
+          Front-end Development professionals I have managed to progress swiftly
+          and understand the market standards for writing{" "}
+          <span className="italic">Clean and Professional code</span>. <br />{" "}
+          <br />I got hooked on coding from the moment I picked up an Arduino
+          kit. The fact that the code I wrote made real world changes seemed
+          fascinating to me. This is the reasson why I got drawn to Front-end
+          development as well. The changes made to the code appeared on the
+          screen instantly and provided instant feedback. This gets me{" "}
+          <span className="italic">Inspired</span> every single time to{" "}
+          <span className="italic">Explore new Possibilities</span>.
           <br /> <br />
-          For all of my skills click <span className="italic">Resume</span> and for all of my latest projects click
-          <span className="italic"> Projects</span>. Feel free to explore my <span className="italic">Github</span> or contact me using the
+          For all of my skills click <span className="italic">Resume</span> and
+          for all of my latest projects click
+          <span className="italic"> Projects</span>. Feel free to explore my{" "}
+          <span className="italic">Github</span> or contact me using the
           <span className="italic"> buttons on the right.</span>
         </motion.div>
         <motion.div
@@ -105,14 +109,12 @@ export const About = () => {
 
   return (
     <>
-    <div className="about">
-      <div className="textWrapperAbout">
-        <Animation />
-      </div>         
-    </div>
-    <Footer/>
+      <div className="about">
+        <div className="textWrapperAbout">
+          <Animation />
+        </div>
+      </div>
+      <Footer />
     </>
-    
-
   );
 };

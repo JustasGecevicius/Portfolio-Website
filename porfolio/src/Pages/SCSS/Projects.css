@@ -166,10 +166,10 @@ button:active {
   overflow-y: auto;
 }
 .projectModal .modal .modalImageDiv .modalImage {
-  margin-bottom: 2rem;
+  border-bottom: solid 4px rgb(30, 223, 84);
 }
 .projectModal .modal .modalImageDiv .modalImage:last-child {
-  margin-bottom: 0rem;
+  border-bottom: none;
 }
 .projectModal .modal .modalTextWrap {
   padding: 1rem;
@@ -178,6 +178,7 @@ button:active {
   flex-direction: column;
   overflow-y: auto;
   flex-basis: 50%;
+  max-height: 450px;
 }
 .projectModal .modal .modalTextWrap .modalTitleWrap {
   display: flex;
