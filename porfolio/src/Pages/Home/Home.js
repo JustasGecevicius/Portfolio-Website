@@ -4,14 +4,13 @@ import {ParallaxProvider} from "react-scroll-parallax";
 import { About } from "./About";
 import { useEffect, useState } from "react";
 import {getStorage, ref, listAll, getDownloadURL} from "firebase/storage";
-import { PropagateLoader } from "react-spinners";
+import image from "../Images/W016.jpg";
 import {Contacts} from "./Contacts"
 
 export const Home = () => {
 
   
   const [backgroundImages, setBackgroundImages] = useState();
-  const [loaded, setLoaded] = useState();
 
   const fetchImages = async () => {
     const storage = await getStorage();
@@ -28,21 +27,20 @@ export const Home = () => {
 useEffect (() => {fetchImages().then((response) => {
 setBackgroundImages((prev) => {
   return response;
-})
+});
 })},[]);
 
-useEffect (() => {
-  setTimeout(() => {
-    setLoaded(true);
-  }, 2000)
-},[backgroundImages]);
+
 
 
   return <div className="Home">
-    <ParallaxProvider>      
-      <Homewindow1 images = {backgroundImages}/>
+    {
+      backgroundImages ? (<ParallaxProvider>      
+      <Homewindow1 images = {backgroundImages} backgroundImage={image}/>
       <About/>
       <Contacts />   
-    </ParallaxProvider>
+    </ParallaxProvider>) : (null)
+    }
+    
   </div>;
 };
