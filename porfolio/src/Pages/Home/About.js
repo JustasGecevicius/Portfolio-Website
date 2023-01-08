@@ -10,7 +10,7 @@ export const About = () => {
   const downloadPDF = async () => {
     try {
       const storage = await getStorage();
-      const url = await getDownloadURL(ref(storage, "Management CV.pdf"));
+      const url = await getDownloadURL(ref(storage, "Web Dev CV.pdf"));
       let alink = document.createElement("a");
       ////console.log(url);
       alink.href = url;
