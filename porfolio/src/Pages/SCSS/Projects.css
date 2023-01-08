@@ -135,9 +135,6 @@ button:active {
   flex-direction: row;
   width: 80vw;
   max-width: 900px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 .projectModal .modal .modalExitButton {
   position: absolute;
